@@ -8,7 +8,6 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 import com.callke8.utils.BlankUtils;
 import com.jfinal.i18n.I18N;
-import com.jfinal.kit.StringKit;
 
 /**
  * 自定义国际化标签，主要是用于在前端显示国际化信息

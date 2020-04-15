@@ -227,9 +227,9 @@ public class CallTask extends Model<CallTask> {
 				}
 			}
 			
-			if(BlankUtils.isBlank(r.get("TOTAL"))) { r.set("TOTAL", 0);};
-			if(BlankUtils.isBlank(r.get("DISTRIBUTION"))) { r.set("DISTRIBUTION", 0);};
-			if(BlankUtils.isBlank(r.get("UNDISTRIBUTION"))) { r.set("UNDISTRIBUTION", 0);};
+			if(BlankUtils.isBlankStr(r.get("TOTAL"))) { r.set("TOTAL", 0);};
+			if(BlankUtils.isBlankStr(r.get("DISTRIBUTION"))) { r.set("DISTRIBUTION", 0);};
+			if(BlankUtils.isBlankStr(r.get("UNDISTRIBUTION"))) { r.set("UNDISTRIBUTION", 0);};
 			
 			newList.add(r);
 			

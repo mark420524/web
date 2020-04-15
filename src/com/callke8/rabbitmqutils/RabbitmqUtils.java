@@ -1,7 +1,7 @@
 package com.callke8.rabbitmqutils;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.concurrent.TimeoutException;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
@@ -29,7 +29,7 @@ public class RabbitmqUtils {
 		try {
 			conn = factory.newConnection();
 			channel = conn.createChannel();
-		} catch (IOException e) {
+		} catch (IOException | TimeoutException e) {
 			e.printStackTrace();
 		}
 	}
@@ -52,7 +52,7 @@ public class RabbitmqUtils {
 			channel.close();
 			conn.close();
 			
-		} catch (IOException e) {
+		} catch (IOException | TimeoutException e) {
 			e.printStackTrace();
 		}
 	}
@@ -90,7 +90,7 @@ public class RabbitmqUtils {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (IOException | TimeoutException e) {
 			e.printStackTrace();
 		} 
 		

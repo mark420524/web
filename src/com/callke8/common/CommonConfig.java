@@ -1,6 +1,5 @@
 package com.callke8.common;
 
-import org.quartz.SchedulerException;
 
 import com.callke8.astutils.AsteriskConfig;
 import com.callke8.astutils.AsteriskConnectionPool;
@@ -302,6 +301,7 @@ public class CommonConfig extends JFinalConfig {
 		me.add(new BSHRoute());
 		me.add(new CnnRoute());
 	}
+
 
 }
 

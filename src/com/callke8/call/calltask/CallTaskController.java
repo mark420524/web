@@ -107,7 +107,7 @@ public class CallTaskController extends Controller implements IController {
 		phone.set("CT_ID",taskId);
 		phone.set("TELEPHONE", cp.get("TELEPHONE"));
 		phone.set("CLIENT_NAME", cp.get("CLIENT_NAME"));
-		phone.set("CLIENT_SEX", BlankUtils.isBlank(cp.get("CLIENT_SEX"))?1:cp.get("CLIENT_SEX"));
+		phone.set("CLIENT_SEX", BlankUtils.isBlankStr(cp.get("CLIENT_SEX"))?1:cp.get("CLIENT_SEX"));
 		phone.set("CREATE_TIME", DateFormatUtils.getCurrentDate());
 		phone.set("CREATE_USERCODE",getSession().getAttribute("currOperId"));
 		phone.set("STATE","0");  //号码状态:  0新添加号码  1被分配  2已经呼叫且成功,3已经呼叫，但失败

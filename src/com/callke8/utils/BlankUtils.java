@@ -18,7 +18,7 @@ public class BlankUtils {
 	 *            字符串
 	 * @return 返回布尔值，true表示字符串为null或空字符串
 	 */
-	public static boolean isBlank(final String string) {
+	public static boolean isBlankStr(final String string) {
 		return string == null || string.trim().length() <= 0;
 	}
 

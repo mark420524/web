@@ -144,7 +144,7 @@ public class AutoCallTaskController extends Controller implements IController {
 		
 		//主叫号码
 		String callerId = autoCallTask.get("CALLERID");                  //取得主叫号码，通过分配选取的方式
-		int callerGroupId = BlankUtils.isBlank(autoCallTask.get("CALLERID_GROUP_ID"))?0:autoCallTask.getInt("CALLERID_GROUP_ID");    //取得主叫号码，通过选择号码组的方式
+		int callerGroupId = BlankUtils.isBlankStr(autoCallTask.get("CALLERID_GROUP_ID"))?0:autoCallTask.getInt("CALLERID_GROUP_ID");    //取得主叫号码，通过选择号码组的方式
 		if(BlankUtils.isBlank(callerId) && callerGroupId == 0) {    //如果两者都为空时，返回主叫号码不能为空
 			render(RenderJson.error("新增外呼任务失败,主叫号码不能为空!"));
 			return;
@@ -375,7 +375,7 @@ public class AutoCallTaskController extends Controller implements IController {
 		
 		//主叫号码
 		String callerId = autoCallTask.get("CALLERID");                  //取得主叫号码，通过分配选取的方式
-		int callerGroupId = BlankUtils.isBlank(autoCallTask.get("CALLERID_GROUP_ID"))?0:autoCallTask.getInt("CALLERID_GROUP_ID");    //取得主叫号码，通过选择号码组的方式
+		int callerGroupId = BlankUtils.isBlankStr(autoCallTask.get("CALLERID_GROUP_ID"))?0:autoCallTask.getInt("CALLERID_GROUP_ID");    //取得主叫号码，通过选择号码组的方式
 		if(BlankUtils.isBlank(callerId) && callerGroupId == 0) {    //如果两者都为空时，返回主叫号码不能为空
 			render(RenderJson.error("修改外呼任务失败,主叫号码不能为空!"));
 			return;

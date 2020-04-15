@@ -34,15 +34,16 @@ import com.callke8.utils.RenderJson;
 import com.callke8.utils.TreeJson;
 import com.jfinal.aop.ClearInterceptor;
 import com.jfinal.core.Controller;
-import com.jfinal.log.Logger;
 import com.jfinal.plugin.activerecord.Record;
 
 import net.sf.json.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @ClearInterceptor
 public class CommonController extends Controller {
 	
-	Logger log = Logger.getLogger(CommonController.class);
+	Logger log = LoggerFactory.getLogger(CommonController.class);
 	
 	public void index() {
 		if(BlankUtils.isBlank(getSession().getAttribute("currOperId"))) {
@@ -230,7 +231,7 @@ public class CommonController extends Controller {
 				//登录成功
 				//在登录成功之前，是否需要提示修改密码
 				String changePasswordNotice = null;
-				if(BlankUtils.isBlank(operator.get("UPDATE_PASSWORD_TIME"))) {       		//检查上次更新密码的时间
+				if(BlankUtils.isBlankStr(operator.get("UPDATE_PASSWORD_TIME"))) {       		//检查上次更新密码的时间
 					changePasswordNotice = "温馨提示：为了安全，请及时修改你的登录密码!";
 				}else {    //如果不为空时，对比当前时间，是否已经超过三个月没有修改密码了
 					String updatePasswordTime = String.valueOf(operator.get("UPDATE_PASSWORD_TIME"));   //上次修改密码的时间

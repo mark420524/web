@@ -45,7 +45,7 @@ public class LoginLog extends Model<LoginLog> {
 		boolean b = Db.save("sys_login_log", "LOG_ID", loginLog);
 		
 		if(b) {
-			if(!BlankUtils.isBlank(loginLog.get("LOG_ID"))) {
+			if(!BlankUtils.isBlankStr(loginLog.get("LOG_ID"))) {
 				return Integer.valueOf(loginLog.get("LOG_ID").toString());
 			}
 		}

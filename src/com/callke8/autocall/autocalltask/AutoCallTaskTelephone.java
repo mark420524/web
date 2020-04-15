@@ -1425,7 +1425,7 @@ public class AutoCallTaskTelephone extends Model<AutoCallTaskTelephone> {
 			String stateDictName = dsr.getStr("DICT_NAME");
 			
 			Record sr = new Record();
-			if(BlankUtils.isBlank(stateData.get(stateDictCode))) {
+			if(BlankUtils.isBlankStr(stateData.get(stateDictCode))) {
 				sr.set("value",0);
 			}else {
 				sr.set("value", stateData.getInt(stateDictCode));
@@ -1443,7 +1443,7 @@ public class AutoCallTaskTelephone extends Model<AutoCallTaskTelephone> {
 			String hangupCauseDictName = dhr.getStr("DICT_NAME");
 			
 			Record hr = new Record();
-			if(BlankUtils.isBlank(hangupCauseData.get(hangupCauseDictCode))) {
+			if(BlankUtils.isBlankStr(hangupCauseData.get(hangupCauseDictCode))) {
 				hr.set("value",0);
 			}else {
 				hr.set("value", hangupCauseData.getInt(hangupCauseDictCode));

@@ -9,7 +9,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.asteriskjava.manager.AuthenticationFailedException;
 import org.asteriskjava.manager.ManagerConnection;
-import org.asteriskjava.manager.SendActionCallback;
 import org.asteriskjava.manager.TimeoutException;
 import org.asteriskjava.manager.action.CommandAction;
 import org.asteriskjava.manager.response.CommandResponse;

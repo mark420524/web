@@ -191,7 +191,7 @@ public class Param extends Model<Param> {
 	 */
 	public boolean delete(Param param) {
 		
-		if(BlankUtils.isBlank(param) || BlankUtils.isBlank(param.get("PARAM_CODE")) || BlankUtils.isBlank(param.getInt("PARAM_TYPE"))) {
+		if(BlankUtils.isBlank(param) || BlankUtils.isBlankStr(param.get("PARAM_CODE")) || BlankUtils.isBlank(param.getInt("PARAM_TYPE"))) {
 			return false;
 		}
 		

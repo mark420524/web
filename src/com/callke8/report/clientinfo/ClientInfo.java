@@ -66,7 +66,7 @@ public class ClientInfo extends Model<ClientInfo> {
 	 */
 	public boolean add(Record clientInfo) {
 		//对象为空时，返回false
-		if(BlankUtils.isBlank(clientInfo) || BlankUtils.isBlank(clientInfo.get("CLIENT_TELEPHONE"))) {
+		if(BlankUtils.isBlank(clientInfo) || BlankUtils.isBlankStr(clientInfo.get("CLIENT_TELEPHONE"))) {
 			return false;
 		}
 		//在新增客户信息之前，先判断当前的号码,是否已经存在相同的记录

@@ -81,7 +81,7 @@ public class TaskExecuteController extends Controller implements IController{
 			}
 		}
 		
-		if(BlankUtils.isBlank(clientInfo.get("LOCATION"))) {    //在组织 propertyGrid 之前，先判断归属地是否为空，如果为空时，先加入归属地
+		if(BlankUtils.isBlankStr(clientInfo.get("LOCATION"))) {    //在组织 propertyGrid 之前，先判断归属地是否为空，如果为空时，先加入归属地
 			clientInfo.set("LOCATION", PhoneNumberHandlerUtils.getLocation(telephone));    //添加归属地
 		}
 		
